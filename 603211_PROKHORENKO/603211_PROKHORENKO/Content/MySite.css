@@ -1,0 +1,73 @@
+﻿.header-strip {
+    background-color: #222222;
+    padding: 5px;
+    border-bottom: 3px solid #428bca;
+}
+
+    .header-strip a, .header-strip span {
+        color: #999999;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+/*Для удаления рамки вокруг панели измените стиль класса «navbar- inverse» */
+.navbar-inverse {
+    border-color: #222222;
+}
+
+/*Для увеличения отступа от логотипа до меню */
+.logo {
+    float: left;
+    width: 50%;
+}
+
+/*Для уменьшения отступа от панели навигации до нижнего края блока заголовка добавьте стиль: */
+.navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+/*Добавьте нижнюю синюю границу*/
+.main-body {
+    border-bottom: 3px solid #428bca;
+}
+
+/*Для отображения иконок соц сетей добавьте стили*/
+.social-icon {
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.twitter {
+    background: url(../Images/twitter.png) no-repeat;
+}
+
+.facebook {
+    background: url(../Images/fb.png) no-repeat;
+}
+
+.vk {
+    background: url(../Images/vk.png) no-repeat;
+}
+
+/*Для окончательного оформления подвала добавьте стили*/
+.footer-strip {
+    background-color: #222222;
+    padding: 5px;
+    color: #428bca;
+}
+
+    .footer-strip li {
+        list-style-type: none;
+    }
+
+    .footer-strip a {
+        color: #999999;
+    }
+
+    .footer-strip h6 {
+        color: #999999;
+        border-bottom: dotted 1px #999999;
+    }
