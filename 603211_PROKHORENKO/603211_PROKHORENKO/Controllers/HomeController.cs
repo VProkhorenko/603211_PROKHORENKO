@@ -8,21 +8,15 @@ namespace _603211_PROKHORENKO.Controllers
 {
     public class HomeController : Controller
     {
+        // GET: Home
         public ActionResult Index()
         {
-            return View();
-        }
+            ViewBag.MyText = "Лабораторная работа №2";
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+            SelectList Colors = new
+            SelectList(Enum.GetValues(typeof(System.Drawing.KnownColor)));
+            ViewBag.Colors = Colors;
+            ViewBag.MyText = Request.QueryString["Colors"] ?? "Лабораторная работа №2"; 
 
             return View();
         }
