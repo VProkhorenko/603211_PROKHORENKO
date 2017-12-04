@@ -21,7 +21,8 @@ namespace _603211_PROKHORENKO.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+          : base("DefaultConnection", throwIfV1Schema: false)
+             // : base("FoodConnection", throwIfV1Schema: false)
         {
         }
 

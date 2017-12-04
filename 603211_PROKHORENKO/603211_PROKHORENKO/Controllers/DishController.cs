@@ -12,6 +12,9 @@ namespace _603211_PROKHORENKO.Controllers
 
     public class DishController : Controller
     {
+        //добавим поле, задающее количество записей на одну страницу:
+        int pageSize = 3;
+
         IRepository<Dish> repository;
         public DishController(IRepository<Dish> repo)
         {
@@ -31,8 +34,7 @@ namespace _603211_PROKHORENKO.Controllers
         }
 
 
-        //добавим поле, задающее количество записей на одну страницу:
-        int pageSize = 3;
+        
 
 
         // Инициализация списка объектов:

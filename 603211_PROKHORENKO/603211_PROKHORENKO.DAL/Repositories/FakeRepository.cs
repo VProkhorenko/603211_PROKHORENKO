@@ -10,6 +10,7 @@ namespace _603211_PROKHORENKO.DAL.Repositories
 {
     public class FakeRepository : IRepository<Dish>
     {
+        
         public void Create(Dish t)
         {
             throw new NotImplementedException();
@@ -40,8 +41,8 @@ namespace _603211_PROKHORENKO.DAL.Repositories
                 new Dish {DishId=5, DishName="Компот",Description="Быстро растворимый, 2 литра",Calories =180, GroupName="Напитки" },
                 new Dish {DishId=5, DishName="Компот",Description="Быстро растворимый, 2 литра",Calories =180, GroupName="Напитки" },
             new Dish {DishId=6, DishName="Компот2",Description="Быстро растворимый, 2 литра",Calories =180, GroupName="Напитки" },
-            new Dish {DishId=7, DishName="Компот3",Description="Быстро растворимый, 2 литра",Calories =180, GroupName="Напитки" },
-            new Dish {DishId=8, DishName="Компот4",Description="Быстро растворимый, 2 литра",Calories =180, GroupName="Напитки" }
+            new Dish {DishId=7, DishName="Компот3",Description="Быстро растворимый, 2 литра",Calories =180, GroupName="Напитки" }
+          
             };
         }
 

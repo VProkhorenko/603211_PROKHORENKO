@@ -21,13 +21,17 @@ namespace _603211_PROKHORENKO.DAL.Services
 
     public class NinjectDependencyresolver : IDependencyResolver
     {
-       
-
         IKernel kernel;
         public NinjectDependencyresolver(IKernel krnl)
         {
             kernel = krnl;
-            kernel.Bind<IRepository<Dish>>().To<FakeRepository>();
+            //kernel = new StandardKernel();
+            //kernel.Bind<IRepository<Dish>>().To<FakeRepository>();
+            //привязка к созданному реальному репозиторию:
+            kernel
+                .Bind<IRepository<Dish>>()
+                .To<EFDishRepository>()
+                .WithConstructorArgument("name", "FoodConnection");
         }
         public object GetService(Type serviceType)
         {

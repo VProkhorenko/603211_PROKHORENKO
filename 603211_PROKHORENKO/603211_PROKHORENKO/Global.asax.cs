@@ -22,7 +22,9 @@ namespace _603211_PROKHORENKO
         protected override IKernel CreateKernel()
         {
             IKernel kernel =new StandardKernel();
-            kernel.Bind<IRepository<Dish>>().To<FakeRepository>();
+            kernel.Bind<IRepository<Dish>>()
+                .To<EFDishRepository>()
+                .WithConstructorArgument("name", "FoodConnection");
             //DependencyResolver.SetResolver(new NinjectDependencyresolver(kernel));
             return kernel;
         }

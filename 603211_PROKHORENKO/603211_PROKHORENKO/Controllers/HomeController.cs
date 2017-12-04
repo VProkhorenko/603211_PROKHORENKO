@@ -22,5 +22,15 @@ namespace _603211_PROKHORENKO.Controllers
 
             return View();
         }
+
+        public ViewResult About()
+        {
+            throw new NotImplementedException();
+        }
+
+        public ViewResult Contact()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

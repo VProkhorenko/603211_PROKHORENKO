@@ -12,7 +12,7 @@ namespace _603211_PROKHORENKO.DAL.Entities
         public string DishName { get; set; } // название блюда
         public string Description { get; set; } // описание блюда
         public int Calories { get; set; } // кол. калорий на порцию
-        public string GroupName { get; set; } // группа блюд (например, первые блюда, напистки и т.д.)
+        public string GroupName { get; set; } // группа блюд (например, первые блюда, напитки и т.д.)
         public byte[] Image { get; set; } // данные изображения
         public string MimeType { get; set; } // Mime - тип данных изображения
     }
