@@ -29,5 +29,7 @@ namespace _603211_PROKHORENKO.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<_603211_PROKHORENKO.DAL.Entities.Dish> Dishes { get; set; }
     }
 }

@@ -71,3 +71,20 @@
         color: #999999;
         border-bottom: dotted 1px #999999;
     }
+
+
+/*для LAB4 */
+.item-row{
+    margin:5px;
+}
+.centered{
+    text-align:center;
+}
+.item-name{
+    min-height:65px;
+}
+.item-description{
+    min-height: 50px;
+    border-top: solid 1px #dddddd;
+    border-bottom: solid 1px #dddddd;
+}

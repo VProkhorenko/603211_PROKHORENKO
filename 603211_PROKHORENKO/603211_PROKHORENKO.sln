@@ -4,8 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "603211_PROKHORENKO", "603211_PROKHORENKO\603211_PROKHORENKO.csproj", "{8B34ABC4-9A60-428A-A26E-BB475ECE792E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EEAD9D76-0D7C-47E0-A4F5-F456ABD31574} = {EEAD9D76-0D7C-47E0-A4F5-F456ABD31574}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "603211_PROKHORENKO.Tests", "603211_PROKHORENKO.Tests\603211_PROKHORENKO.Tests.csproj", "{3D90677F-A9BB-40EA-9B8D-ABA4D6F0CC8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "603211_PROKHORENKO.DAL", "603211_PROKHORENKO.DAL\603211_PROKHORENKO.DAL.csproj", "{EEAD9D76-0D7C-47E0-A4F5-F456ABD31574}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +26,10 @@ Global
 		{3D90677F-A9BB-40EA-9B8D-ABA4D6F0CC8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D90677F-A9BB-40EA-9B8D-ABA4D6F0CC8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D90677F-A9BB-40EA-9B8D-ABA4D6F0CC8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEAD9D76-0D7C-47E0-A4F5-F456ABD31574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEAD9D76-0D7C-47E0-A4F5-F456ABD31574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEAD9D76-0D7C-47E0-A4F5-F456ABD31574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEAD9D76-0D7C-47E0-A4F5-F456ABD31574}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
