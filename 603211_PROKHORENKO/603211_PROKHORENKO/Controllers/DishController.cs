@@ -27,14 +27,27 @@ namespace _603211_PROKHORENKO.Controllers
         //    return View(repository.GetAll());
         //}
         //Изменим метод List для вывода нужной страницы списка(нумерация страниц начинается с 1):
-        public ActionResult List(int page = 1)
+        //public ActionResult List(int page = 1)
+        //{
+        //    var lst = repository.GetAll().OrderBy(d => d.Calories);
+        //    return View(PageListViewModel<Dish>.CreatePage(lst, page, pageSize));
+        //}
+
+        public ActionResult List(string group, int page = 1)
         {
-            var lst = repository.GetAll().OrderBy(d => d.Calories);
-            return View(PageListViewModel<Dish>.CreatePage(lst, page, pageSize));
+            var lst = repository.GetAll()
+                .Where(d => group == null || d.GroupName.Equals(group))
+                .OrderBy(d => d.Calories);
+
+            var model = PageListViewModel<Dish>.CreatePage(lst, page, pageSize);
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("ListPartial", model);
+            }
+            return View(model);
+
         }
 
-
-        
 
 
         // Инициализация списка объектов:

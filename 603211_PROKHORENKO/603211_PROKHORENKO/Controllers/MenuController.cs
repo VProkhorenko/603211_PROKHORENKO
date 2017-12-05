@@ -14,50 +14,22 @@ namespace _603211_PROKHORENKO.Controllers
     {
 
         IRepository<Dish> repository;
-
-        public MenuController(IRepository<Dish> repo)
-        {
-            repository = repo;
-        }
-
-
         //коллекцию исходных данных меню:
         List<MenuItem> items;
 
         // конструктор класса MenuController и заполните коллекцию items:
-        public MenuController()
+        public MenuController(IRepository<Dish> repo)
         {
+            repository = repo;
+        
             items = new List<MenuItem>
             {
                 new MenuItem { Name = "Домой", Controller = "Home", Action = "Index", Active = string.Empty },
-              //new MenuItem { Name = "Каталог", Controller = "Product", Action = "List", Active = string.Empty },
                 new MenuItem { Name = "Меню", Controller = "Dish", Action = "List", Active = string.Empty },
                 new MenuItem { Name = "Администрирование", Controller = "Admin", Action = "Index", Active = string.Empty }
             };
         }
 
-        // GET: Menu
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-    
-
-
-        // «заглушки» методов:
-        /*
-public string Main()
-        {
-            return "<span>Главное меню</span>";
-        }
-        */
-        /*
-        public PartialViewResult Main()
-        {
-            return PartialView();
-        }
-        */
         /*
           Измените метод Main контроллера Menu:
        Параметр “с” (Controller) автоматически передаются методу из запроса.
@@ -86,18 +58,15 @@ public string Main()
         }
 
 
+
         public PartialViewResult Side()
         {
-            return PartialView(items);
+            var groups = repository
+                .GetAll()
+                .Select(d => d.GroupName)
+                .Distinct();
+            return PartialView(groups);
         }
-        //public PartialViewResult Side()
-        //{
-        //    var groups = repository
-        //        .GetAll()
-        //        .Select(d => d.GroupName)
-        //        .Distinct();
-        //    return PartialView(groups);
-        //}
 
 
         public PartialViewResult Map()
