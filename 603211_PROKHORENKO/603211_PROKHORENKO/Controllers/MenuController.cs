@@ -1,4 +1,6 @@
-﻿using _603211_PROKHORENKO.Models;
+﻿using _603211_PROKHORENKO.DAL.Entities;
+using _603211_PROKHORENKO.DAL.Interfaces;
+using _603211_PROKHORENKO.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +12,13 @@ namespace _603211_PROKHORENKO.Controllers
 
     public class MenuController : Controller
     {
-        
+
+        IRepository<Dish> repository;
+
+        public MenuController(IRepository<Dish> repo)
+        {
+            repository = repo;
+        }
 
 
         //коллекцию исходных данных меню:
@@ -34,6 +42,9 @@ namespace _603211_PROKHORENKO.Controllers
             return View();
         }
 
+    
+
+
         // «заглушки» методов:
         /*
 public string Main()
@@ -53,12 +64,14 @@ public string Main()
        Для элемента списка меню, у которого совпадают параметр Controller с
        полученным параметром, устанавливается свойство Active.
          */
-        
+
         public PartialViewResult Main(string a = "Index", string c = "Home")
         {
             items.First(m => m.Controller == c).Active = "active";
             return PartialView(items);
         }
+
+
 
 
         /*
@@ -75,11 +88,18 @@ public string Main()
 
         public PartialViewResult Side()
         {
-            return PartialView();
+            return PartialView(items);
         }
-  
-        
-    
+        //public PartialViewResult Side()
+        //{
+        //    var groups = repository
+        //        .GetAll()
+        //        .Select(d => d.GroupName)
+        //        .Distinct();
+        //    return PartialView(groups);
+        //}
+
+
         public PartialViewResult Map()
         {
             return PartialView(items);

@@ -286,11 +286,11 @@
     <Content Include="Views\Dish\List.cshtml" />
     <Content Include="Views\Shared\ItemViewPartial.cshtml" />
     <Content Include="Views\Shared\PagerPartial.cshtml" />
+    <Content Include="Views\Menu\Side.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Services\" />
-    <Folder Include="Views\Menu\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
