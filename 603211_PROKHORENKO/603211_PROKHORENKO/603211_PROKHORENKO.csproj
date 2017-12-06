@@ -202,6 +202,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\DishController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -282,14 +283,16 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\UserInfo.cshtml" />
     <Content Include="Views\Shared\Side.cshtml" />
-    <Content Include="Views\Shared\Map.cshtml" />
+    <Content Include="Views\Menu\Map.cshtml" />
     <Content Include="Views\Dish\List_init.cshtml" />
     <Content Include="Views\Dish\List.cshtml" />
     <Content Include="Views\Shared\ItemViewPartial.cshtml" />
     <Content Include="Views\Shared\PagerPartial.cshtml" />
-    <Content Include="Views\Menu\Side.cshtml" />
     <Content Include="Views\Shared\ListPartial.cshtml" />
     <Content Include="Views\Menu\Main.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Admin\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

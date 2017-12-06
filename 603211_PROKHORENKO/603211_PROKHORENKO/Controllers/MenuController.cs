@@ -43,9 +43,6 @@ namespace _603211_PROKHORENKO.Controllers
             return PartialView(items);
         }
 
-
-
-
         /*
         public string UserInfo()
         {
@@ -56,7 +53,6 @@ namespace _603211_PROKHORENKO.Controllers
         {
             return PartialView();
         }
-
 
 
         public PartialViewResult Side()

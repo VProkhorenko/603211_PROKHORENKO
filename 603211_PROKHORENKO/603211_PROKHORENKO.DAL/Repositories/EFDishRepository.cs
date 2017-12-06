@@ -50,7 +50,7 @@ namespace _603211_PROKHORENKO.DAL.Repositories
         // VS добавил
         public Task<Dish> GetAsync(int id)
         {
-            throw new NotImplementedException();
+            return context.Dishes.FindAsync(id);
         }
 
         public void Update(Dish t)

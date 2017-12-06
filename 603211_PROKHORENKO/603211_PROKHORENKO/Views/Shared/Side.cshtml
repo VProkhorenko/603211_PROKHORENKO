@@ -8,6 +8,14 @@
 
 
 
+
+@*@{
+    ViewBag.Title = "Side";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Side</h2>*@
+
 @model IEnumerable<string>
 
 <!-- получение названия текущей группы из запроса -->
@@ -16,8 +24,7 @@
 <h3>Выберите группу</h3>
 <div class="btn-group">
     <button type="button" class="btn btn-default">@txt</button>
-    <button type="button" class="btn btn-default dropdown-toggle"
-            data-toggle="dropdown">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" role="menu">
@@ -40,3 +47,8 @@
         }
     </ul>
 </div>
+
+
+
+
+

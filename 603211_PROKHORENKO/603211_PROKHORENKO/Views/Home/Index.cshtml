@@ -16,9 +16,18 @@
     <hr />
 
     <h2>Форма</h2>
-    @using (Html.BeginForm("Index", "Home",
-                FormMethod.Get, new { @class = "form-horizontal" }))
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @class = "form-horizontal" }))
     {
+
+@section SidePanel
+{
+    <ul class="nav nav-pills nav-stacked">
+        <li><a href="#">Все категории</a></li>
+        <li class="active"><a href="#">Кино</a></li>
+        <li><a href="#">Книги</a></li>
+        <li><a href="#">Инструмент</a></li>
+    </ul>
+}
 
         <div class="col-md-8 col-md-offset-3">
             @Html.DropDownList("Colors")
@@ -81,14 +90,9 @@
 </div><!--/Основная панель (конец)-->
 
 
-@*@using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @class = "form-horizontal" }))
-
-{
-@section SidePanel
-{*@
 
 
-@section SidePanel
+@*@section SidePanel
 {
     <ul class="nav nav-pills nav-stacked">
     <li><a href="#">Все категории</a></li>
@@ -96,4 +100,4 @@
     <li><a href="#">Книги</a></li>
     <li><a href="#">Инструмент</a></li>
 </ul>
-}
+}*@
