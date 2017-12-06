@@ -1,7 +1,11 @@
 ﻿@model _603211_PROKHORENKO.DAL.Entities.Dish
 <div class='col-md-4'>
     <div class='thumbnail'>
-        <img height="200" resource='#' alt='NoImage' />
+        <img height="200" 
+             @*resource='#' alt='NoImage'*@
+             src="@Url.Action("getImage",new {id=Model.DishId })"
+             alt='NoImage'
+             class="img-thumbnail" />
         <div class="caption">
             <div class="item-name">
                 <h3>@Model.DishName</h3>

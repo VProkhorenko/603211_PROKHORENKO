@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using _603211_PROKHORENKO.DAL.Entities;
 using _603211_PROKHORENKO.DAL.Interfaces;
 using _603211_PROKHORENKO.Models;
+using System.Threading.Tasks;
 
 namespace _603211_PROKHORENKO.Controllers
 {
@@ -48,7 +49,28 @@ namespace _603211_PROKHORENKO.Controllers
 
         }
 
+        //public FileContentResult GetImage(int productId)
+        //{
+        //    Dish dish = repository.GetAll().FirstOrDefault(p => p.DishId == productId);
+        //    if (dish != null)
+        //        return File(dish.ImageData, dish.ImageMimeType);
+        //    else
+        //        return null;
+        //}
 
+        public async Task<FileResult> GetImage(int id)
+        {
+            var dish = await repository.GetAsync(id);
+            if (dish != null)
+
+            {
+                return new FileContentResult(dish.Image, dish.MimeType);
+            }
+
+
+            else return null;
+
+        }
 
         // Инициализация списка объектов:
         //List<Dish> dishes = new List<Dish>

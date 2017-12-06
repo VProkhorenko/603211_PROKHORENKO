@@ -36,9 +36,29 @@ namespace _603211_PROKHORENKO.Controllers
         }
 
         // POST: Admin/Create
+        //[HttpPost]
+        //public ActionResult Create(Dish dish)
+        //{
+        //    try
+        //    {
+        //        repository.Create(dish);
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View(dish);
+        //    }
+        //}
         [HttpPost]
-        public ActionResult Create(Dish dish)
+        public ActionResult Create(Dish dish, HttpPostedFileBase imageUpload = null)
         {
+            if (imageUpload != null)
+            {
+                var count = imageUpload.ContentLength;
+                dish.Image = new byte[count];
+                imageUpload.InputStream.Read(dish.Image, 0, (int)count);
+                dish.MimeType = imageUpload.ContentType;
+            }
             try
             {
                 repository.Create(dish);
@@ -57,11 +77,32 @@ namespace _603211_PROKHORENKO.Controllers
         }
 
         // POST: Admin/Edit/5
+        //[HttpPost]
+        //public ActionResult Edit(Dish dish)
+        //{
+        //    try
+        //    {
+        //        repository.Update(dish);
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View(dish);
+        //    }
+        //}
         [HttpPost]
-        public ActionResult Edit(Dish dish)
+        public ActionResult Edit(Dish dish, HttpPostedFileBase imageUpload = null)
         {
+            if (imageUpload != null)
+            {
+                var count = imageUpload.ContentLength;
+                dish.Image = new byte[count];
+                imageUpload.InputStream.Read(dish.Image, 0, (int)count);
+                dish.MimeType = imageUpload.ContentType;
+            }
             try
             {
+                // TODO: Add update logic here
                 repository.Update(dish);
                 return RedirectToAction("Index");
             }
@@ -70,6 +111,8 @@ namespace _603211_PROKHORENKO.Controllers
                 return View(dish);
             }
         }
+
+
 
         // GET: Admin/Delete/5
         public ActionResult Delete(int id)

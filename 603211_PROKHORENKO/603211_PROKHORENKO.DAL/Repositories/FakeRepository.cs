@@ -46,6 +46,11 @@ namespace _603211_PROKHORENKO.DAL.Repositories
             };
         }
 
+        //public Task<Dish> GetAsync(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+        //заглушка:
         public Task<Dish> GetAsync(int id)
         {
             throw new NotImplementedException();
