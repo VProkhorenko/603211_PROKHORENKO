@@ -26,7 +26,8 @@ namespace _603211_PROKHORENKO.Controllers
             {
                 new MenuItem { Name = "Домой", Controller = "Home", Action = "Index", Active = string.Empty },
                 new MenuItem { Name = "Меню", Controller = "Dish", Action = "List", Active = string.Empty },
-                new MenuItem { Name = "Администрирование", Controller = "Admin", Action = "Index", Active = string.Empty }
+                new MenuItem { Name = "Администрирование", Controller = "Admin", Action = "Index", Active = string.Empty },
+                new MenuItem { Name = "Корзина", Controller = "Cart", Action = "Index", Active = string.Empty }
             };
         }
 

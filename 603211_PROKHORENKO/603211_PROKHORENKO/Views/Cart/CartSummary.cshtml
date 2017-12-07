@@ -1,0 +1,14 @@
+﻿@model _603211_PROKHORENKO.Models.Cart
+
+@*@{
+    ViewBag.Title = "CartSummary";
+    Layout = "~/Views/Shared/UserInfo.cshtml";
+}*@
+
+@*<h2>CartSummary</h2>*@
+
+<a href=@Url.Action("Index","Cart",new {returnUrl=Request.Path })>
+    @Model.GetTotal() калорий ( @Model.GetItems().Sum(i=>i.Quantity) )
+    <span class="glyphicon glyphicon-shopping-cart"></span>
+</a>
+

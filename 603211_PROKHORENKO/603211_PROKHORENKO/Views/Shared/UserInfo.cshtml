@@ -9,9 +9,18 @@
     </a>
 </div>
 <div class="nav navbar-right">
-    <a href="#">
+    @Html.Action("CartSummary","Cart")
+</div>
+
+
+
+@*<div class="nav navbar-right">
+   
+   
+    <a href=@Url.Action("Index", "Cart", new {returnUrl = Request.Path})>
+     
+
         0.00 руб. ( 0 )<span class="glyphicon glyphicon-shopping-cart ">
         </span>
     </a>
-</div>
-
+</div>*@
