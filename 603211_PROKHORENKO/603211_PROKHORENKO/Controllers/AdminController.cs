@@ -23,9 +23,9 @@ namespace _603211_PROKHORENKO.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            var tovar = repository.GetAll().ToList();
+            var dishes = repository.GetAll().ToList();
 
-            return View(tovar);
+            return View(dishes);
         }
 
 
@@ -52,7 +52,9 @@ namespace _603211_PROKHORENKO.Controllers
         [HttpPost]
         public ActionResult Create(Dish dish, HttpPostedFileBase imageUpload = null)
         {
-            if (imageUpload != null)
+            if (ModelState.IsValid)
+          {
+                if (imageUpload != null)
             {
                 var count = imageUpload.ContentLength;
                 dish.Image = new byte[count];
@@ -66,8 +68,11 @@ namespace _603211_PROKHORENKO.Controllers
             }
             catch
             {
-                return View(dish);
-            }
+                return View();
+                //return View(dish);
+                }
+         }
+            else return View(dish);
         }
 
         // GET: Admin/Edit/5
@@ -93,7 +98,9 @@ namespace _603211_PROKHORENKO.Controllers
         [HttpPost]
         public ActionResult Edit(Dish dish, HttpPostedFileBase imageUpload = null)
         {
-            if (imageUpload != null)
+            if (ModelState.IsValid)
+          {
+                if (imageUpload != null)
             {
                 var count = imageUpload.ContentLength;
                 dish.Image = new byte[count];
@@ -108,8 +115,11 @@ namespace _603211_PROKHORENKO.Controllers
             }
             catch
             {
-                return View(dish);
+                    //return View(dish);
+                return View();
+                }
             }
+            else return View(dish);
         }
 
 

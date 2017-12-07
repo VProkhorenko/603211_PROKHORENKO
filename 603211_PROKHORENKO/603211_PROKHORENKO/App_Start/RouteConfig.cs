@@ -23,7 +23,7 @@ namespace _603211_PROKHORENKO
                     controller = "Dish",
                     action = "list",
                     page = 1,
-                    category = (string)null
+                    group = (string)null
                 });
             routes.MapRoute(
                 name: "",
@@ -32,12 +32,12 @@ namespace _603211_PROKHORENKO
                 {
                     controller = "Dish",
                     action = "list",
-                    category = (string)null
+                    group = (string)null
                 },
                 constraints: new { page = @"\d+" });
             routes.MapRoute(
                 name: "",
-                url: "menu/{category}",
+                url: "menu/{group}",
                 defaults: new
                 {
                     controller = "Dish",
@@ -46,7 +46,7 @@ namespace _603211_PROKHORENKO
                 });
             routes.MapRoute(
                 name: "",
-                url: "menu/{category}/page{page}",
+                url: "menu/{group}/page{page}",
                 defaults: new { controller = "Dish", action = "list" },
                 constraints: new { page = @"\d+" });
 

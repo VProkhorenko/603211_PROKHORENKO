@@ -8,7 +8,10 @@ using System.Data.Entity;
 namespace _603211_PROKHORENKO.DAL.Entities
 {
     //class FoodContextInitializer : DropCreateDatabaseAlways<FoodContext>
-    class FoodContextInitializer : CreateDatabaseIfNotExists<FoodContext>
+    //class FoodContextInitializer : CreateDatabaseIfNotExists<FoodContext>
+    // 6
+    class FoodContextInitializer : DropCreateDatabaseIfModelChanges<FoodContext>
+ 
 
     //можно использовать класс DropCreateDatabaseAlways.
     //В этом случае база данных будет создаваться заново при каждом запуске приложения
