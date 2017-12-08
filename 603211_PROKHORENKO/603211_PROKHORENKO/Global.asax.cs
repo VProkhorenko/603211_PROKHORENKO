@@ -37,5 +37,12 @@ namespace _603211_PROKHORENKO
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+
+
+
+      
+
+
     }
 }

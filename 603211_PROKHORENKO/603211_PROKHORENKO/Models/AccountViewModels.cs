@@ -65,6 +65,10 @@ namespace _603211_PROKHORENKO.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "Ваш НИК")]
+        public string NickName { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }

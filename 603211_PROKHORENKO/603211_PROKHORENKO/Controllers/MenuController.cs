@@ -38,9 +38,24 @@ namespace _603211_PROKHORENKO.Controllers
        полученным параметром, устанавливается свойство Active.
          */
 
+        // GET: Menu
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        //public PartialViewResult Main(string a = "Index", string c = "Home")
+        //{
+        //    items.First(m => m.Controller == c).Active = "active";
+        //    return PartialView(items);
+        //}
+
+
         public PartialViewResult Main(string a = "Index", string c = "Home")
         {
-            items.First(m => m.Controller == c).Active = "active";
+            IEnumerable<MenuItem> itemCliced = items.Where<MenuItem>(m => m.Controller == c);
+            if (itemCliced.Any())
+                items.First(m => m.Controller == c).Active = "active";
             return PartialView(items);
         }
 

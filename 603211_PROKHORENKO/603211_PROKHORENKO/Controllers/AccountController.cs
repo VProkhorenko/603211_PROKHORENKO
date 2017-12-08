@@ -12,21 +12,42 @@ using _603211_PROKHORENKO.Models;
 
 namespace _603211_PROKHORENKO.Controllers
 {
-    [Authorize]
+    //[Authorize]
+    [Authorize(Roles = "admin")] //LAB7
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationRoleManager _roleManager; //LAB7
 
         public AccountController()
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager,
+            ApplicationRoleManager roleManager) //LAB7
+
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            RoleManager = roleManager; //LAB7 
         }
+
+
+        //LAB7
+        public ApplicationRoleManager RoleManager
+        {
+            get
+            {
+                return _roleManager
+                       ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
+            }
+            private set
+            {
+                _roleManager = value;
+            }
+        }
+
 
         public ApplicationSignInManager SignInManager
         {
@@ -151,10 +172,11 @@ namespace _603211_PROKHORENKO.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, NickName = model.NickName}; //lab7 NickName = model.NickName
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    await UserManager.AddToRoleAsync(user.Id, "user"); //LAB7
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771

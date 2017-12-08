@@ -36,7 +36,8 @@ namespace _603211_PROKHORENKO.Controllers
         }
 
         //Метод Index должен вывести список товаров корзины:
-            public ActionResult Index(string returnUrl)
+        [Authorize] //LAB7
+        public ActionResult Index(string returnUrl)
         {
 
             //var dishes = repository.GetAll().ToList();

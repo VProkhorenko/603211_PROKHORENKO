@@ -1,0 +1,8 @@
+PM> Add-Migration "Nick"
+Re-scaffolding migration 'Nick'.
+PM> Update-Database
+Specify the '-Verbose' flag to view the SQL statements being applied to the target database.
+Applying explicit migrations: [201712081507597_Nick].
+Applying explicit migration: 201712081507597_Nick.
+Running Seed method.
+PM> 

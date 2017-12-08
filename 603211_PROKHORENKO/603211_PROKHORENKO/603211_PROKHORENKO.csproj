@@ -211,6 +211,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\IdentityDbInitializer.cs" />
+    <Compile Include="Migrations\201712080836099_initial.cs" />
+    <Compile Include="Migrations\201712080836099_initial.Designer.cs">
+      <DependentUpon>201712080836099_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712081507597_Nick.cs" />
+    <Compile Include="Migrations\201712081507597_Nick.Designer.cs">
+      <DependentUpon>201712081507597_Nick.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -321,6 +331,14 @@
       <Project>{EEAD9D76-0D7C-47E0-A4F5-F456ABD31574}</Project>
       <Name>603211_PROKHORENKO.DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712080836099_initial.resx">
+      <DependentUpon>201712080836099_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712081507597_Nick.resx">
+      <DependentUpon>201712081507597_Nick.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
