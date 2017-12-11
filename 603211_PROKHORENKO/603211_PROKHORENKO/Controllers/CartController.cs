@@ -18,6 +18,7 @@ namespace _603211_PROKHORENKO.Controllers
                 repository = repo;
             }
 
+
         //Опишем метод GetCart, который должен вернуть нам корзину заказа из
         //    сессии.Необходимо сначала проверить, сохранялась ли корзина раньше.   
         /// <summary>
@@ -36,14 +37,11 @@ namespace _603211_PROKHORENKO.Controllers
         }
 
         //Метод Index должен вывести список товаров корзины:
-        [Authorize] //LAB7
+        [Authorize] //LAB7 IndexCart
         public ActionResult Index(string returnUrl)
         {
-
             //var dishes = repository.GetAll().ToList();
-
             //return View(dishes);
-
 
             TempData["returnUrl"] = returnUrl;
             return View(GetCart());

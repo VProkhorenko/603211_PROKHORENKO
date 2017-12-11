@@ -12,8 +12,8 @@ using _603211_PROKHORENKO.Models;
 
 namespace _603211_PROKHORENKO.Controllers
 {
-    //[Authorize]
-    [Authorize(Roles = "admin")] //LAB7
+    [Authorize]
+    //[Authorize(Roles = "admin")] //LAB7
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;

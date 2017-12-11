@@ -10,10 +10,10 @@ using _603211_PROKHORENKO.DAL.Repositories;
 
 namespace _603211_PROKHORENKO.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class AdminController : Controller
     {
         IRepository<Dish> repository;
-
         public AdminController(IRepository<Dish> repo)
         {
             repository = repo;
@@ -23,9 +23,9 @@ namespace _603211_PROKHORENKO.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            var dishes = repository.GetAll().ToList();
-
-            return View(dishes);
+            return View(repository.GetAll());//lab8
+            //var dishes = repository.GetAll().ToList();
+            //return View(dishes);
         }
 
 
@@ -68,8 +68,8 @@ namespace _603211_PROKHORENKO.Controllers
             }
             catch
             {
-                return View();
-                //return View(dish);
+               // return View();
+                return View(dish);
                 }
          }
             else return View(dish);
@@ -116,7 +116,7 @@ namespace _603211_PROKHORENKO.Controllers
             catch
             {
                     //return View(dish);
-                return View();
+                return View(dish); //lab8
                 }
             }
             else return View(dish);
@@ -127,7 +127,7 @@ namespace _603211_PROKHORENKO.Controllers
         // GET: Admin/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(repository.Get(id));
         }
 
         // POST: Admin/Delete/5
@@ -137,12 +137,13 @@ namespace _603211_PROKHORENKO.Controllers
             try
             {
                 // TODO: Add delete logic here
-
+                repository.Delete(id);//lab8
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View(repository.Get(id));
+                //return View(); //lab8
             }
         }
     }
