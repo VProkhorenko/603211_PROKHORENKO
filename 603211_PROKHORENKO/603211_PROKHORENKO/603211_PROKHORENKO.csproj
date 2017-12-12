@@ -309,6 +309,7 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Cart\CartSummary.cshtml" />
     <Content Include="Views\Admin\Delete.cshtml" />
+    <Content Include="Views\Admin\Side.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
