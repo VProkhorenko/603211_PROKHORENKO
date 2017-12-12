@@ -20,16 +20,16 @@
     @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @class = "form-horizontal" }))
     {
 
+        //мои правки
 @section SidePanel
 {
     <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="@Url.Action("Index", "Home")">Домой</a></li>
         <li><a href="@Url.Action("List", "Dish")">Меню</a></li>
-        <li><a href="#">Администрирование</a></li>
-        <li><a href="#">Корзина</a></li>
-        <li  class="active"><a href="#">Инструмент</a></li>
+        <li><a href="@Url.Action("Index", "Admin")">Администрирование</a></li>
+        <li><a href="@Url.Action("Index", "Cart")">Корзина</a></li>
+        
     </ul>
-    
-       
 }
 
                 <div class="col-md-8 col-md-offset-3">

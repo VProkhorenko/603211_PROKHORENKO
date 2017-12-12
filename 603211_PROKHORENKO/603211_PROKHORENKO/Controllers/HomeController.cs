@@ -15,10 +15,9 @@ namespace _603211_PROKHORENKO.Controllers
         {
             ViewBag.MyText = "Лабораторная работа №2";
 
-            SelectList Colors = new
-            SelectList(Enum.GetValues(typeof(System.Drawing.KnownColor)));
-            ViewBag.Colors = Colors;
-            ViewBag.MyText = Request.QueryString["Colors"] ?? "Лабораторная работа №2"; 
+            SelectList colors = new SelectList(Enum.GetValues(typeof(System.Drawing.KnownColor)));
+            ViewBag.Colors = colors;
+            ViewBag.MyText = Request.QueryString["colors"] ?? "Лабораторная работа №2"; 
 
             return View();
         }

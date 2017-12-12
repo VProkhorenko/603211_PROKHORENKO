@@ -20,13 +20,36 @@ namespace _603211_PROKHORENKO.Controllers
         }
 
        
-        // GET: Admin
-        public ActionResult Index()
+        // GET: Admin МОИ ПРАВКИ ДЛЯ АДМИНА
+        //public ActionResult Index()
+        //{
+        //    return View(repository.GetAll());//lab8
+        //    //var dishes = repository.GetAll().ToList();
+        //    //return View(dishes);
+        //}
+        public ActionResult Index(string group)
         {
-            return View(repository.GetAll());//lab8
-            //var dishes = repository.GetAll().ToList();
-            //return View(dishes);
+            var lst = repository.GetAll()
+                .Where(d => group == null || d.GroupName.Equals(group))
+                .OrderBy(d => d.Calories);
+
+            //var model = PageListViewModel<Dish>.CreatePage(lst, page, pageSize);
+            //if (Request.IsAjaxRequest())
+            //{
+            //    return PartialView("ListPartial", model);
+            //}
+            //return View(model);
+            return View(lst);
         }
+        public PartialViewResult Side()
+        {
+            var groups = repository
+                .GetAll()
+                .Select(d => d.GroupName)
+                .Distinct();
+            return PartialView(groups);
+        }
+
 
 
         // GET: Admin/Create

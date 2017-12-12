@@ -1,4 +1,5 @@
-﻿@model _603211_PROKHORENKO.Models.Cart
+﻿@using _603211_PROKHORENKO.DAL.Entities
+@model _603211_PROKHORENKO.Models.Cart
 
 @{
     ViewBag.Title = "Index";
@@ -25,5 +26,34 @@
     }
     </tbody>
 </table>
-<a href="@TempData["returnUrl"]" class="btn btn-default">Вернуться к меню</a>
+
+@*мои правки*@
+@section SidePanel
+{
+    <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="@Url.Action("Index", "Home")">Домой</a></li>
+        <li><a href="@Url.Action("List", "Dish")">Меню</a></li>
+        <li><a href="@Url.Action("Index", "Admin")">Администрирование</a></li>
+        <li><a href="@Url.Action("Index", "Cart")">Корзина</a></li>
+        
+    </ul>
+}
+
+@*МОИ ПРАВКИ*@
+@*<a href="@TempData["returnUrl"]" class="btn btn-default">Вернуться к меню</a>*@
+@*<a href="@Url.Action("List", "Dish")" class="btn btn-default">Вернуться к меню</a>*@
+ 
+            @if (@TempData["returnUrl"] != null)
+            { 
+        <a href="@TempData["returnUrl"]" class="btn btn-default">Вернуться к меню</a>
+            }
+@if (@TempData["returnUrl"] == null)
+{ 
+        <a href="@Url.Action("List", "Dish")" class="btn btn-default">Вернуться к меню</a>
+}
+
+
+
+
+
 

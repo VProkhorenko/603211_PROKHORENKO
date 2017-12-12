@@ -295,7 +295,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\UserInfo.cshtml" />
-    <Content Include="Views\Shared\Side.cshtml" />
+    <Content Include="Views\Menu\Side.cshtml" />
     <Content Include="Views\Menu\Map.cshtml" />
     <Content Include="Views\Dish\List_init.cshtml" />
     <Content Include="Views\Dish\List.cshtml" />

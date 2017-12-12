@@ -6,6 +6,12 @@
 
 <h2>Index</h2>
 
+@*МОИ ПРАВКИ*@
+@section SidePanel{
+    @Html.Action("Side", "Menu")
+    @*@Html.Action("Index", "Admin")*@
+}
+
 <p>
     @Html.ActionLink("Добавить", "Create")
 </p>

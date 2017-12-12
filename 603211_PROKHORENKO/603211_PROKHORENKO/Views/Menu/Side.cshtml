@@ -19,7 +19,7 @@
 @model IEnumerable<string>
 
 <!-- получение названия текущей группы из запроса -->
-@{var txt = Request.RequestContext.RouteData.Values["group"] ?? "Всегруппы";}
+@{var txt = Request.RequestContext.RouteData.Values["group"] ?? "Все группы";}
 
 <h3>Выберите группу</h3>
 <div class="btn-group">
