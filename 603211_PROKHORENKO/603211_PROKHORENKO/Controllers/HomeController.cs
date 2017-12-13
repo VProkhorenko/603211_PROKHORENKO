@@ -25,11 +25,19 @@ namespace _603211_PROKHORENKO.Controllers
         public ViewResult About()
         {
             throw new NotImplementedException();
+            //ViewData["Username"] = User.Identity.Name;
+            //ViewData["CompanyName"] = "MyCompany";
+            //return View();
+
         }
 
         public ViewResult Contact()
         {
             throw new NotImplementedException();
+            //ViewBag.Username = User.Identity.Name;
+            //ViewBag.CompanyName = "MyCompany";
+            //return View();
+
         }
     }
 }

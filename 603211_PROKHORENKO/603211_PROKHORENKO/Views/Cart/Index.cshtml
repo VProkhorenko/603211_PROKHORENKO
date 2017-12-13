@@ -43,12 +43,15 @@
 @*<a href="@TempData["returnUrl"]" class="btn btn-default">Вернуться к меню</a>*@
 @*<a href="@Url.Action("List", "Dish")" class="btn btn-default">Вернуться к меню</a>*@
  
-            @if (@TempData["returnUrl"] != null)
-            { 
-        <a href="@TempData["returnUrl"]" class="btn btn-default">Вернуться к меню</a>
-            }
-@if (@TempData["returnUrl"] == null)
-{ 
+@*@if (@TempData["returnUrl"] != null)*@
+@if ((@TempData["returnUrl"]).ToString().Contains("menu"))
+          
+            {
+        <a href = "@TempData["returnUrl"]" class="btn btn-default">Вернуться к меню</a>
+}
+@*@if (@TempData["returnUrl"] != null)*@
+   @if (!(@TempData["returnUrl"]).ToString().Contains("menu"))
+   {
         <a href="@Url.Action("List", "Dish")" class="btn btn-default">Вернуться к меню</a>
 }
 
